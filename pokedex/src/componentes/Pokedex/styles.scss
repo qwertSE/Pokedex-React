@@ -1,3 +1,7 @@
+body{
+    background-color: rgb(180, 230, 226);
+}
+
 main {
   display: inline-block;
   margin-top: 2%;
@@ -15,6 +19,7 @@ main {
     left: 50%;
     transform: translate(-63%, 20%);
     height: 18%;
+    display: none;
   }
 
   .pokemon__data {
@@ -27,6 +32,7 @@ main {
   }
 
   .pokemon__name {
+    padding-left: 0.5rem;
     color: #3a444d;
     text-transform: capitalize;
   }

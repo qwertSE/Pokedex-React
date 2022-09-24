@@ -1,31 +1,42 @@
-import './styles.scss'
-import pokedexImg from "../../img/pokedex.png"
+import "./styles.scss";
+import pokedexImg from "../../img/pokedex.png";
+import buscarPokemon from "../../Utilidades/buscarPokemon";
+
+
+const submit = (event) => {
+  event.preventDefault();
+  const input = document.querySelector(".input__search");
+  buscarPokemon(input.value);
+
+  /* Somente para teste */
+  console.log(`O formulario foi enviado com sucesso!`);
+};
 
 function Pokedex() {
   return (
     <main>
-      <img src="#" alt="pokemon" class="pokemon__image" />
+      <img src="#" alt="pokemon" className="pokemon__image" />
 
-      <h1 class="pokemon__data">
-        <span class="pokemon__number"></span> -
-        <span class="pokemon__name"></span>
+      <h1 className="pokemon__data">
+        <span className="pokemon__number"></span> -
+        <span className="pokemon__name"></span>
       </h1>
 
-      <form class="form">
+      <form className="form" onSubmit={submit}>
         <input
           type="search"
-          class="input__search"
+          className="input__search"
           placeholder="Name or Number"
           required
         />
       </form>
 
-      <div class="buttons">
-        <button class="button btn-prev">Prev &lt;</button>
-        <button class="button btn-next">Next &gt;</button>
+      <div className="buttons">
+        <button className="button btn-prev">&lt; Prev </button>
+        <button className="button btn-next">Next &gt;</button>
       </div>
 
-      <img src={pokedexImg} alt="pokedex" class="pokedex" />
+      <img src={pokedexImg} alt="pokedex" className="pokedex" />
     </main>
   );
 }
