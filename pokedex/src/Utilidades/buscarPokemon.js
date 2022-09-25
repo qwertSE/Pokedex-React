@@ -7,7 +7,13 @@ export var idGlobal = 0;
 
 /* Criação do card do pokemon caso exista. */
 function buscarPokemon(id) {
-  fetchPokemon(id.toLowerCase())
+
+  if(typeof id === 'string'){
+    id = id.toLowerCase()
+  }
+
+
+  fetchPokemon(id)
     .then((response) => {
       return response;
     })
