@@ -7,7 +7,7 @@ export var idGlobal = 0;
 
 /* Criação do card do pokemon caso exista. */
 function buscarPokemon(id) {
-  fetchPokemon(id)
+  fetchPokemon(id.toLowerCase())
     .then((response) => {
       return response;
     })
@@ -38,9 +38,9 @@ function buscarPokemon(id) {
 }
 
 const fetchPokemon = async (pokemon) => {
-  const APIResponse = await fetch(
-    `https://pokeapi.co/api/v2/pokemon/${pokemon}`
-  );
+  let url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
+
+  const APIResponse = await fetch(url);
 
   /* Caso exista retorna as informações, caso não exista devera aparecer 'Not found' */
   if (APIResponse.status === 200) {
