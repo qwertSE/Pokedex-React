@@ -8,12 +8,10 @@ const submit = (event) => {
   event.preventDefault();
   const input = document.querySelector(".input__search");
   buscarPokemon(input.value);
-
-  /* Somente para teste */
-  console.log(`O formulario foi enviado com sucesso!`);
 };
 
 function Pokedex() {
+
   return (
     <main>
       <img src="#" alt="pokemon" className="pokemon__image" />
@@ -27,7 +25,7 @@ function Pokedex() {
         <input
           type="search"
           className="input__search"
-          placeholder="Name or Number"
+          placeholder="Name or Number"     
           required
         />
       </form>

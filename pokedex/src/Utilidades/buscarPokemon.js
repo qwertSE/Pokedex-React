@@ -40,7 +40,6 @@ function buscarPokemon(id) {
     .catch((err) => {
       console.log("Provavelmente o pokemon não existe...");
     });
-  return console.log("Sucesso");
 }
 
 const fetchPokemon = async (pokemon) => {
