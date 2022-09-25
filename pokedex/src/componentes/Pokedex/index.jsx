@@ -1,6 +1,7 @@
 import "./styles.scss";
 import pokedexImg from "../../img/pokedex.png";
 import buscarPokemon from "../../Utilidades/buscarPokemon";
+import { next, previous } from "../../Utilidades/botoesPokemon";
 
 
 const submit = (event) => {
@@ -32,8 +33,8 @@ function Pokedex() {
       </form>
 
       <div className="buttons">
-        <button className="button btn-prev">&lt; Prev </button>
-        <button className="button btn-next">Next &gt;</button>
+        <button className="button btn-prev" onClick={previous}>&lt; Prev </button>
+        <button className="button btn-next" onClick={next}>Next &gt;</button>
       </div>
 
       <img src={pokedexImg} alt="pokedex" className="pokedex" />
