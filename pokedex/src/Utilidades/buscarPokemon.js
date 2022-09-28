@@ -14,9 +14,6 @@ function buscarPokemon(id) {
 
 
   fetchPokemon(id)
-    .then((response) => {
-      return response;
-    })
     .then((result) => {
       /* Id de controle para os botões */
       idGlobal = result.id;
@@ -53,7 +50,7 @@ const fetchPokemon = async (pokemon) => {
     return data;
   } else {
     imgPokemon[0].style.display = "none";
-    namePokemon[0].innerHTML = "Not found :c";
+    namePokemon[0].innerHTML = "Não encontrado... :(";
     idPokemon[0].innerHTML = "";
   }
 };
