@@ -11,7 +11,22 @@ function buscarPokemon(id) {
   if(typeof id === 'string'){
     id = id.toLowerCase()
   }
-
+  
+  const fetchPokemon = async (pokemon) => {
+    let url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
+  
+    const APIResponse = await fetch(url);
+  
+    /* Caso exista retorna as informações, caso não exista devera aparecer 'Not found' */
+    if (APIResponse.status === 200) {
+      const data = await APIResponse.json();
+      return data;
+    } else {
+      imgPokemon[0].style.display = "none";
+      namePokemon[0].innerHTML = "Não encontrado... :(";
+      idPokemon[0].innerHTML = "";
+    }
+  };
 
   fetchPokemon(id)
     .then((result) => {
@@ -39,20 +54,5 @@ function buscarPokemon(id) {
     });
 }
 
-const fetchPokemon = async (pokemon) => {
-  let url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
-
-  const APIResponse = await fetch(url);
-
-  /* Caso exista retorna as informações, caso não exista devera aparecer 'Not found' */
-  if (APIResponse.status === 200) {
-    const data = await APIResponse.json();
-    return data;
-  } else {
-    imgPokemon[0].style.display = "none";
-    namePokemon[0].innerHTML = "Não encontrado... :(";
-    idPokemon[0].innerHTML = "";
-  }
-};
 
 export default buscarPokemon;
