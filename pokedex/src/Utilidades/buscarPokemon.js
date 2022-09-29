@@ -50,7 +50,7 @@ function buscarPokemon(id) {
       }
     })
     .catch((err) => {
-      console.log("Provavelmente o pokemon não existe...");
+      console.log(`Ocorreu um erro...${err.message}`);
     });
 }
 

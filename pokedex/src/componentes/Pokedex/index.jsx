@@ -1,8 +1,7 @@
 import "./styles.scss";
 import pokedexImg from "../../img/pokedex.png";
 import buscarPokemon from "../../Utilidades/buscarPokemon";
-import { next, previous } from "../../Utilidades/botoesPokemon";
-
+import Botao from './Botao'
 
 const submit = (event) => {
   event.preventDefault();
@@ -11,7 +10,6 @@ const submit = (event) => {
 };
 
 function Pokedex() {
-
   return (
     <main>
       <img src="#" alt="pokemon" className="pokemon__image" />
@@ -25,16 +23,11 @@ function Pokedex() {
         <input
           type="search"
           className="input__search"
-          placeholder="Name or Number"     
+          placeholder="Name or Number"
           required
         />
       </form>
-
-      <div className="buttons">
-        <button className="button btn-prev" onClick={previous}>&lt; Prev </button>
-        <button className="button btn-next" onClick={next}>Next &gt;</button>
-      </div>
-
+      <Botao/>
       <img src={pokedexImg} alt="pokedex" className="pokedex" />
     </main>
   );
