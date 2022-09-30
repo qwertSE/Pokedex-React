@@ -1,7 +1,8 @@
 import "./styles.scss";
 import pokedexImg from "../../img/pokedex.png";
 import buscarPokemon, { idGlobal } from "../../Utilidades/buscarPokemon";
-import Botao from './Botao'
+import Botao from "./Botao";
+import { useEffect} from "react";
 
 const submit = (event) => {
   event.preventDefault();
@@ -10,6 +11,11 @@ const submit = (event) => {
 };
 
 function Pokedex() {
+
+  useEffect(() => {
+    console.log('renderizou')
+  }, []);
+
   return (
     <main>
       <img src="#" alt="pokemon" className="pokemon__image" />
@@ -28,8 +34,8 @@ function Pokedex() {
         />
       </form>
       <div className="buttons">
-      <Botao name={'< Prev'} func={() => buscarPokemon(idGlobal-1)}/>
-      <Botao name={'Next >'} func={() => buscarPokemon(idGlobal+1)}/>
+        <Botao name={"< Prev"} func={() => buscarPokemon(idGlobal - 1)} />
+        <Botao name={"Next >"} func={() => buscarPokemon(idGlobal + 1)} />
       </div>
       <img src={pokedexImg} alt="pokedex" className="pokedex" />
     </main>
