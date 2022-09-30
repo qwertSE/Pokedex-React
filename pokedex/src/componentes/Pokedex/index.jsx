@@ -1,6 +1,6 @@
 import "./styles.scss";
 import pokedexImg from "../../img/pokedex.png";
-import buscarPokemon from "../../Utilidades/buscarPokemon";
+import buscarPokemon, { idGlobal } from "../../Utilidades/buscarPokemon";
 import Botao from './Botao'
 
 const submit = (event) => {
@@ -27,7 +27,10 @@ function Pokedex() {
           required
         />
       </form>
-      <Botao/>
+      <div className="buttons">
+      <Botao name={'< Prev'} func={() => buscarPokemon(idGlobal-1)}/>
+      <Botao name={'Next >'} func={() => buscarPokemon(idGlobal+1)}/>
+      </div>
       <img src={pokedexImg} alt="pokedex" className="pokedex" />
     </main>
   );
