@@ -32,6 +32,7 @@ function buscarPokemon(id) {
     .then((result) => {
       /* Id de controle para os botões */
       idGlobal = result.id;
+      
       idPokemon[0].innerHTML = result["id"];
       namePokemon[0].innerHTML = result["name"];
       imgPokemon[0].style.display = "block";
